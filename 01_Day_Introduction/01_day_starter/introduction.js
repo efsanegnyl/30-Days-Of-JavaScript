@@ -1,0 +1,1 @@
+console.log("30 Günde JavaScript'e Hoşgeldin");
