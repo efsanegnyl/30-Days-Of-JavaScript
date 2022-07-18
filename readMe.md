@@ -6,7 +6,7 @@
 | # Günler |       Konular        |
 |----------|:--------------------:|
 | 01       | [Giriş](./readMe.md) |
-
+| 02       | [Data Types - Veri Tipleri-](./02_Day_Data_types/02_day_data_types.md) |
 
 
 [30 Günde  JavaScript](#30-days-of-javascript)
@@ -74,7 +74,7 @@ Node.js'e şuan ihtiyacınız olmayabilir, ancak daha sonra ihtiyacnız olabilir
 
 Localiniz de node'un kurulu olup olmadıgını terminali veya komut istemini kullanarak kontrol edebilirsiniz.
 ```sh
-asabeneh $ node -v
+$ node -v
 v12.14.0
 ```
 ### Browser
