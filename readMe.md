@@ -3,10 +3,10 @@
 'ın 30 Days of JavaScript' oluşturduğu ve 30 günde javascripti öğretmeyi hedeflediği repoyu elimden geldiğince türkçeleştirerek , ders sonlarındaki egzersizlerin örneklerini de paylaşacağım.
 
 
-| # Günler |       Konular        |
-|----------|:--------------------:|
-| 01       | [Giriş](./readMe.md) |
-
+| # Günler |                                                          Konular                                                           |
+|----------|:--------------------------------------------------------------------------------------------------------------------------:|
+| 01       |                                                    [Giriş](./readMe.md)                                                    |
+| 02    |                                    [Data Types](./02_Day_Data_types/02_day_data_types.md)                                  |
 
 
 [30 Günde  JavaScript](#30-days-of-javascript)
