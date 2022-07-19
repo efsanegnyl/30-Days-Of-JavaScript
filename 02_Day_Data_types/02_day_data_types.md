@@ -15,8 +15,10 @@
        - [String  Birleştirme](#string-birleştirme)
          - [Toplama Operatörünü Kullanarak Birleştirme
            ](#string-index-of)
-         - [Uzun Değişmez Stringler](#uzun-değişmez-stringler))"
-      
+         - [Uzun Değişmez Stringler](#uzun-değişmez-stringler)
+         - [String'lerdeki Kaçış Dizileri](#stringlerdeki-kaçış-dizileri)
+         - [Template Literals (Template Strings)](#stringlerdeki-kaçış-dizileri)
+    - [String  Methods](#string-methods)
 
 
 
@@ -279,7 +281,7 @@ console.log(personInfoOne)
 
 #### Uzun Değişmez Stringler
 
-Stringler tek bir karakter, paragraf yada sayfa olabilir. String uzunluğu çok büyükse tek bir satıra sığmayabilir. String'in bir sonraki satırda devam edeceğini belirtmek için her satırın sonunda ters slash (\) kullanabiliriz.  
+Stringler tek bir karakter, paragraf yada sayfa olabilir. String uzunluğu çok büyükse tek bir satıra sığmayabilir. String'in bir sonraki satırda devam edeceğini belirtmek için her satırın sonunda ters slash ( \ ) kullanabiliriz.  
 **Örnek:**
 
 ```js
@@ -294,3 +296,76 @@ Now, we are in 2020. I am enjoying preparing the 30DaysOfJavaScript challenge an
 I hope you are enjoying too."
 console.log(paragraph)
 ```
+
+#### Stringlerdeki Kaçış Dizileri
+
+JavaScript ve diğer programlama dillerinde \ ardından bazı karakterler bir kaçış dizisidir. En yaygın kaçış karakterlerini görelim:
+
+- \n: Yeni satır
+- \t: Tab, 8 boşluk anlamına gelir
+- \\: Back slash
+- \': Tek tırnak (')
+- \": Çift tırnak (")
+
+```js
+console.log('I hope everyone is enjoying the 30 Days Of JavaScript challenge.\nDo you ?') // alt satıra geç
+console.log('Days\tTopics\tExercises')
+console.log('Day 1\t3\t5')
+console.log('Day 2\t3\t5')
+console.log('Day 3\t3\t5')
+console.log('Day 4\t3\t5')
+console.log('This is a backslash  symbol (\\)') // backslash sembolü
+console.log('In every programming language it starts with \"Hello, World!\"')
+console.log("In every programming language it starts with \'Hello, World!\'")
+console.log('The saying \'Seeing is Believing\' isn\'t correct in 2020')
+```
+
+console çıktısı
+
+```
+I hope everyone is enjoying the 30 Days Of JavaScript challenge.
+Do you ?
+Days  Topics  Exercises
+Day 1 3 5
+Day 2 3 5
+Day 3 3 5
+Day 4 3 5
+This is a backslash  symbol (\)
+In every programming language it starts with "Hello, World!"
+In every programming language it starts with 'Hello, World!'
+The saying 'Seeing is Believing' isn't correct in 2020
+```
+
+### Template Literals (Template Strings)
+
+Template literals oluşturmak için backtik kullanırız. Verileri bir template string içine ifade olarak ekleme  yapabiliriz. Verileri  eklemek  için, ifadeyi bir $ işareti ile başlayan bir küme parantezinin({}) içine alırız. Aşağıdaki syntax'a bakın.
+
+```js 
+//Syntax
+`String literal text`
+`String literal text ${expression}`
+ ```
+Örnek:1
+```js 
+console.log(`The sum of 2 and 3 is 5`)              // verileri statik olarak yazma
+let a = 2
+let b = 3
+console.log(`The sum of ${a} and ${b} is ${a + b}`) // verileri dinamik olarak ekleme
+ ```
+
+Örnek:2
+```js
+
+let firstName = 'Efsane'
+let lastName = 'Günyol'
+let country = 'Türkiye'
+let city = 'İstanbul'
+let language = 'JavaScript'
+
+let personInfoTwo = `I am ${fullName}. I am ${age}. I live in ${country}.` //ES6 -
+let personInfoThree = `I am ${fullName}. I live in ${city}, ${country}. I teach ${language}.`
+console.log("dede",personInfoTwo)
+console.log(personInfoThree)
+```
+
+
