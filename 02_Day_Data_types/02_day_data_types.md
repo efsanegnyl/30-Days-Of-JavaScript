@@ -18,7 +18,7 @@
          - [Uzun Değişmez Stringler](#uzun-değişmez-stringler)
          - [String'lerdeki Kaçış Dizileri](#stringlerdeki-kaçış-dizileri)
          - [Template Literals (Template Strings)](#stringlerdeki-kaçış-dizileri)
-    - [String  Methods](#string-methods)
+    - [String Methods](#string-methods)
 
 
 
@@ -367,5 +367,99 @@ let personInfoThree = `I am ${fullName}. I live in ${city}, ${country}. I teach 
 console.log("dede",personInfoTwo)
 console.log(personInfoThree)
 ```
+
+### String Methodları  
+
+JavaScripte her şe bir nesnedir.String  primitive veri türüdür, bu oluşturulduktan sonra değiştiremeyeceğimiz anlamına gelir.Bir çok string metodu  vardır .Bunlar stringler ile çalışmamıza yardımcı olur. 
+
+  1. lenght : String içerisindeki karakterlerin uzunluğunu döndürür, boşluklar dahildir.
+
+Örnek:
+
+```js
+let js = 'JavaScript'
+console.log(js.length)         // 10
+let firstName = 'Efsane'
+console.log(firstName.length)  // 6
+
+```
+   2. String'deki karakterlere erişim: String içerisinde bulunan her karaktere index numarasıyla erişebilriz.Programlama'da sayma 0 dan başlar.
+String'in ilk dizini 0 , son dizini ise toplam uzunluğun -1 dir.
+
+![Accessing sting by index](../images/string_indexes.png)
+
+'JavaScript' string'indeki farklı karakterlere erişelim.
+ ```js
+let string = 'JavaScript'
+let firstLetter = string[0]
+console.log(firstLetter)//J
+
+let secondLetter = string[1] // a
+let thirdLetter = string[2]
+let lastLetter = string[9]
+
+console.log(lastLetter) // t
+
+let lastIndex = string.length - 1
+
+console.log(lastIndex) // 9
+console.log(string[lastIndex]) // t
+ ```
+   3. toUpperCase(): Bu metot string verisini büyük harflere dönüştürür.
+ ```js
+let string = 'JavaScript'
+
+console.log(string.toUpperCase()) // JAVASCRIPT
+
+let firstName = 'Asabeneh'
+
+console.log(firstName.toUpperCase())  // ASABENEH
+
+let country = 'Finland'
+
+console.log(country.toUpperCase())    // FINLAND
+```
+   4. toLowerCase(): Bu metot string verisini küçük harflere dönüştürür.
+ ```js
+let string = 'JavasCript'
+
+console.log(string.toLowerCase())     // javascript
+
+let firstName = 'Asabeneh'
+
+console.log(firstName.toLowerCase())  // asabeneh
+
+let country = 'Finland'
+
+console.log(country.toLowerCase())   // finland
+ ```
+   5. substr(): İki arrgüman alır,  belirtilen string'den başlayıp daha sonra belirli sayıda karaktere kadar uzanan string'in bir bölümünü döndürür.
+   
+```js
+let string = 'JavaScript'
+console.log(string.substr(4,6))    // Script
+
+let country = 'Türkiye'
+console.log(country.substr(3, 4))   // kiye
+```
+   !! _Bu özellik artık önerilmemektedir.Kullanmaktan kaçının ve mümkünse mevcut kodu güncelleyin;
+      kararınızı yönlendirmek için [bu sayfanın](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr) altındaki uyumluluk tablosuna bakın. Bu özelliğin herhangi bir zamanda çalışmayı durdurabileceğini unutmayın._
+
+  6. substring(): Başlangıç ​​indeksi ve durma indeksi olmak üzere iki argüman alır ancak durma indeksindeki karakteri içermez (Bu metot string verisini belirtilen index numarasına kadar olan kısmı döndürür.)
+```js
+let string = 'JavaScript'
+
+console.log(string.substring(0,4))     // Java
+console.log(string.substring(4,10))    // Script
+console.log(string.substring(4))       // Script
+
+let country = 'Türkiye'
+
+console.log(country.substring(0, 3))   // Tür
+console.log(country.substring(3, 7))   // kiye
+console.log(country.substring(3))      // kiye
+```
+ 7. split(): Bu metot bir stringi belirtilen yerden bölmeye yarar. ( array oluşturur )
+
 
 
