@@ -18,8 +18,17 @@
          - [Uzun Değişmez Stringler](#uzun-değişmez-stringler)
          - [String'lerdeki Kaçış Dizileri](#stringlerdeki-kaçış-dizileri)
          - [Template Literals (Template Strings)](#stringlerdeki-kaçış-dizileri)
-    - [String Methods](#string-methods)
-
+    - [String Methods](#string-methodları)
+  - [Veri Türlerini Kontrol Etme ve Döküm(Casting)](#veri-türlerini-kontrol-etme-ve-döküm(casting))
+    - [Veri Türlerini Kontrol Etme](#veri-türlerini-kontrol-etme)
+    - [Veri Türünü Değiştirme(Casting)](#veri-türünü-değiştirme(casting))
+      - [String To Int](#string-to-nt)
+      - [String To Float](#string-to-float)
+      - [Float To Int](#float-to-nt)
+- [💻 2. Gün:Egzersizler](#-2-gun-egzersizler)
+   - [Egzersiz:Seviye 1](#egzersiz-seviye-1)
+   - [Egzersiz:Seviye 2](#egzersiz-seviye-2)
+   - [Egzersiz:Seviye 3](#egzersiz-seviye-3)
 
 
 # 📔 2. Gun
@@ -445,7 +454,7 @@ console.log(country.substr(3, 4))   // kiye
    !! _Bu özellik artık önerilmemektedir.Kullanmaktan kaçının ve mümkünse mevcut kodu güncelleyin;
       kararınızı yönlendirmek için [bu sayfanın](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr) altındaki uyumluluk tablosuna bakın. Bu özelliğin herhangi bir zamanda çalışmayı durdurabileceğini unutmayın._
 
-  6. substring(): Başlangıç ​​indeksi ve durma indeksi olmak üzere iki argüman alır ancak durma indeksindeki karakteri içermez (Bu metot string verisini belirtilen index numarasına kadar olan kısmı döndürür.)
+  6. substring(): Başlangıç indeksi ve durma indeksi olmak üzere iki argüman alır ancak durma indeksindeki karakteri içermez (Bu metot string verisini belirtilen index numarasına kadar olan kısmı döndürür.)
 ```js
 let string = 'JavaScript'
 
@@ -460,6 +469,362 @@ console.log(country.substring(3, 7))   // kiye
 console.log(country.substring(3))      // kiye
 ```
  7. split(): Bu metot bir stringi belirtilen yerden bölmeye yarar. ( array oluşturur )
+
+```js
+console.log("-----Split-----")
+let string = '30 Days Of JavaScript'
+
+console.log(string.split())     // 1 elemanlı array oluşturur. -> ["30 Days Of JavaScript"]
+console.log(string.split(' '))  //Boşluktan böl dediğim için 4 elemanlı array oluşturur. -> ["30", "Days", "Of", "JavaScript"]
+
+
+//let firstName = 'Efsane'
+
+console.log(firstName.split())    //- > ["Efsane"]
+console.log(firstName.split(''))  // Strinler içindeki tüm karakterleri aray haline getirir->  ["E", "f", "s", "a", "n", "e"]
+
+let countries = 'Finland, Sweden, Norway, Denmark, and Iceland'
+
+console.log(countries.split(','))  //  Virgülden böl dendiği için 5 elemanlı array oluşturur.2. elemsnın solunda boşluk oluşur. -> ["Finland", " Sweden", " Norway", " Denmark", " and Iceland"]
+console.log(countries.split(', ')) // ', ' virgül ve boşluk bulunmakta bu yüzden elementleri virgülden ayırıp boşluklsuz arrray oluşturuyor. ["Finland", "Sweden", "Norway", "Denmark", "and Iceland"]
+```
+   8. trim():String'in başındaki  ve sondaki boşlukları siler.
+```js
+let stringTrim= '   30 Days Of JavaScript   '
+
+console.log(stringTrim)
+console.log(stringTrim.trim(' '))
+
+let firstNameTrim = ' Efsane '
+
+console.log(firstNameTrim)
+console.log(firstNameTrim.trim())  // içinde tırnak kullanmasanız dahi boşlukları siler.
+```
+
+   9. includes(): Bir alt string argümanı alır ve string alt dize argümanının olup olmadığını kontrol eder.Boolean değer döndürür.Eğer bulunursa true, bulunmazsa false döndürür.
+```js
+let stringIncludes = '30 Days Of JavaScript'
+
+console.log(stringIncludes.includes('Days'))     // true
+console.log(stringIncludes.includes('days'))     // false - birebir arama yapar
+console.log(stringIncludes.includes('Script'))   // true
+console.log(stringIncludes.includes('script'))   // false
+console.log(stringIncludes.includes('java'))     // false
+console.log(stringIncludes.includes('Java'))     // true
+
+let countryIncludes = 'Finland'
+
+console.log(countryIncludes.includes('fin'))     // false
+console.log(countryIncludes.includes('Fin'))     // true
+console.log(countryIncludes.includes('land'))    // true
+console.log(countryIncludes.includes('Land'))    // false
+```
+   10. replace(): Eski stringi yeni stringe değiştirir.
+```js
+let stringReplace = '30 Days Of JavaScript'
+console.log(stringReplace.replace('JavaScript', 'Python')) // 30 Days Of Python
+
+let countryReplace = 'Finland'
+console.log(countryReplace.replace("Fin","Eng")) // England
+```
+   11. charAt(): String deki indexi belirtilen karakteri döndürür.
+```js   
+let stringCharAt = '30 Days Of JavaScript'
+console.log(stringCharAt.charAt(0))        // 3
+
+let lastIndex = stringCharAt.length - 1
+console.log(stringCharAt.charAt(lastIndex)) // t
+```
+   12. charCodeAt(): String deki indexi belirtilen karakterin ASCII kodunu döndürür.
+```js
+let stringCharCode = '30 Days Of JavaScript'
+console.log(stringCharCode.charCodeAt(3))        // D ASCII 68
+
+let lastIndex1 = stringCharCode.length - 1
+console.log(stringCharCode.charCodeAt(lastIndex1)) // t ASCII  116
+```
+   13. indexOf(): Belirtilen string değerin indexini verir. Eğer bulamazsa -1 döndürür.
+
+```js
+let stringIndexOf= '30 Days Of JavaScript'
+
+console.log(stringIndexOf.indexOf('D'))          // 3
+console.log(stringIndexOf.indexOf('Days'))       // 3
+console.log(stringIndexOf.indexOf('days'))       // -1
+console.log(stringIndexOf.indexOf('a'))          // 4
+console.log(stringIndexOf.indexOf('JavaScript')) // 11
+console.log(stringIndexOf.indexOf('Script'))     //15
+console.log(stringIndexOf.indexOf('script'))     // -1
+```
+   14. lastIndexOf(): Belirtilen string değerin son indexini verir. Eğer bulamazsa -1 döndürür.
+```js
+let stringLastIndex = 'I love JavaScript. If you do not love JavaScript what else can you love.'
+
+console.log(stringLastIndex.lastIndexOf('love'))       // 67
+console.log(stringLastIndex.lastIndexOf('you'))        // 63
+console.log(stringLastIndex.lastIndexOf('JavaScript')) // 38
+
+```
+  15. concat(): Birden çok alt stringi birleştirir.
+```js
+let stringConcat = '30'
+console.log(stringConcat.concat("Days", "Of", "JavaScript")) // 30DaysOfJavaScript
+
+let countryConcat = 'Fin'
+console.log(countryConcat.concat("land")) // Finland
+```
+   16. startsWith: Stringin belirtilen string ifadeyle başlayıp başlamadıgını kontrol eder. True veya false döndürür.
+
+```js
+
+let stringStart = 'Love is the best to in this world'
+
+console.log(stringStart.startsWith('Love'))   // true
+console.log(stringStart.startsWith('love'))   // false
+console.log(stringStart.startsWith('world'))  // false
+
+let countryStart = 'Finland'
+
+console.log(countryStart.startsWith('Fin'))   // true
+console.log(countryStart.startsWith('fin'))   // false
+console.log(countryStart.startsWith('land'))  //  false
+```
+   17. endsWith: Stringin belirtilen string ifadeyle bitip bitmediğini kontrol eder. True veya false döndürür.
+```js
+let stringEnds = 'Love is the most powerful feeling in the world'
+
+console.log(stringEnds.endsWith('world'))         // true
+console.log(stringEnds.endsWith('love'))          // false
+console.log(stringEnds.endsWith('in the world')) // true
+
+let countryEnds = 'Finland'
+
+console.log(countryEnds.endsWith('land'))         // true
+console.log(countryEnds.endsWith('fin'))          // false
+console.log(countryEnds.endsWith('Fin'))          //  false
+```
+   18. search(): Bir normal ifade ile bu String nesnesi arasında bir eşleşme araması yürütür.
+```js
+console.log(" ----Search---- ")
+let stringSearch = 'I love JavaScript. If you do not love  JavaScript what else can you love.'
+console.log(stringSearch.search('love'))          // 2
+console.log(stringSearch.search(/javascript/gi))  // 7 g-bütün metinde ara i- büyük küçük harf duyarsız
+```
+  19. match: Argüman olarak bir alt dize veya normal ifade kalıbı alır ve eşleşme varsa bir dizi döndürür, değilse null döndürür. Normal bir ifade kalıbının nasıl göründüğünü görelim. / işareti ile başlar ve / işareti ile biter.
+```js
+let string = 'love'
+let patternOne = /love/     // koşulsuz
+let patternTwo = /love/gi   // g-bütün metinde ara, i - büyük küçük harf duyarsız
+```
+Match syntax
+```js
+// syntax
+string.match(substring)
+```
+
+```js
+let stringMatch = 'I love JavaScript. If you do not love JavaScript what else can you love.'
+console.log(stringMatch.match('love')) //
+```
+```
+["love", index: 2, input: "I love JavaScript. If you do not love JavaScript what else can you love.", groups: undefined]
+```
+```js
+let pattern = /love/gi
+console.log(string.match(pattern))   // ["love", "love", "love"]
+```
+Regex(Regular Expression -Düzenli İfadeler) kullanarak metinden sayıları çıkalaralım .Burası regex bölümü değil, panik yapmayın!Regular expression 'ı daha sonra ele alacağız.
+```js
+let txt = 'In 2019, I ran 30 Days of Python. Now, in 2020 I am super exited to start this challenge'
+let regEx = /\d+/
+
+// kaçış karakterli d, d'nin normal olmadığı anlamına gelir, d bunun yerine bir rakam gibi davranır
+// + bir veya daha fazla basamaklı sayı anlamına gelir,
+// ondan sonra g varsa global demektir, her yerde ara.
+
+console.log(txt.match(regEx))  //
+console.log(txt.match(/\d+/g)) // ["2019", "30", "2020"]
+```
+   20. repeat():Argüman olarak bir sayı alır.  String nesnesinin belirtilen sayıda tekrarlanmasını sağlar.
+```js
+let stringRepeat = 'love'
+console.log(stringRepeat.repeat(10)) // lovelovelovelovelovelovelovelovelovelove
+```
+
+  ## Veri Türlerini Kontrol Etme ve Döküm(Casting)
+  ### Veri Türlerini Kontrol Etme
+
+Belirli bir değişkenin veri türünü kontrol etmek için typeof yöntemini kullanırız.
+
+Örnek;
+```js
+
+// Farklı JavaScript veri türleri
+
+let firstName = 'Efsane'      // string
+let lastName = 'Günyol'        // string
+let age = 25                   // number
+let job                         // undefined,çünkü değer atanmamış
+
+console.log(typeof 'Efsane')  // string
+console.log(typeof firstName)   // string
+console.log(typeof 10)          // number
+console.log(typeof 3.14)        // number
+console.log(typeof true)        // boolean
+console.log(typeof false)       // boolean
+console.log(typeof NaN)         // number
+console.log(typeof job)         // undefined
+console.log(typeof undefined)   // undefined
+console.log(typeof null)        // object
+```
+ ### Veri Türünü Değiştirme(Casting)
+   - Döküm: Bir veri tipini başka bir veri tipine dönüştürme. Kullandıklarımız parseInt(), parseFloat(), Number(), + sign, str() Aritmetik işlemler yapmadan önce string sayıları önce integer yada float türüne dönüştürmeliyiz yoksa hata alırız.
+ #### String to Int
+String bir numarayı  sayıya dönüştürebiliriz. Alıntı içindeki herhangi bir sayı bir string numarasıdır. Bir string numarası örneği: '10', '5', vb. Aşağıdaki yöntemleri kullanarak stringi sayıya dönüştürebiliriz:
+  - parseInt()
+  - Number()
+  - Plus sign(+) // artı işareti 
+ ```js
+let num = '10'
+let numInt = parseInt(num)
+console.log(numInt) // 10
+```
+ ```js
+let num = '10'
+let numInt = Number(num)
+
+console.log(numInt) // 10
+```
+ ```js
+let num = '10'
+let numInt = +num
+
+console.log(numInt) // 10
+```
+  #### String to Float
+  String bir float sayıya dönüştürülebilir. Alıntı içindeki herhangi bir sayı bir string float sayısıdır. Bir string float sayısı örneği: '9.81', '3.14', '1.44' vb. Aşağıdaki yöntemleri kullanarak stringi float sayıya dönüştürebiliriz:
+  - parseFloat()
+  - Number()
+  - Plus sign(+) // artı işareti 
+  ```js
+let num = '9.81'
+let numFloat = parseFloat(num)
+
+console.log(numFloat) // 9.81
+```
+```js
+let num = '9.81'
+let numFloat = Number(num)
+
+console.log(numFloat) // 9.81
+```
+```js
+let num = '9.81'
+let numFloat = +num
+
+console.log(numFloat) // 9.81
+```
+#### Float to Int
+Float bir numarayı  tam sayıya dönüştürebiliriz. Alıntı içindeki herhangi bir sayı bir float sayısıdır. Aşağıdaki yöntemi kullanarak float sayısını sayıya dönüştürebiliriz:
+  - parseInt()
+  ```js
+let num = 9.81
+let numInt = parseInt(num)
+
+console.log(numInt) // 9
+```
+
+🌕 Harikasın. 2. günü yeni tamamladınız ve mükemmelliğe giden yolda iki adım öndesiniz. Şimdi beyniniz ve kasınız için bazı egzersizler yapın.
+
+# 💻 2. Gun: Egzersizler
+#### Egzersiz: Seviye 1
+ 1. challenge adında bir değişken tanımlayın ve '30 Days Of JavaScript' başlangıç değerine atayın.
+ 2. console.log() kullanarak tarayıcı konsolunda değişkeni yazdırın,
+ 3. console.log() kullanarak tarayıcı konsolunda stringin  length değerini yazdırın,
+ 4. toUpperCase() yöntemini kullanarak tüm string karakterlerini büyük harflerle değiştirin,
+ 5. toLowerCase() yöntemini kullanarak tüm string karakterlerini küçük harflerle değiştirin,
+ 6. substr() veya substring() yöntemini kullanarak string'in ilk kelimesini kesin  
+ 7. Days Of JavaScript ifadesini 30 Days Of JavaScript'ten ayırın.
+ 8. includes() yöntemini kullanarak string'in Script kelimesini içerip içermediğini kontrol edin
+ 9. split() yöntemini kullanarak string öğesini bir array'ye bölün
+ 10. 30 Days Of JavaScript dizesini split() yöntemini kullanarak boşlukta bölün
+ 11. 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon' dizeyi virgülden split ve bir dizi olarak değiştirin.
+ 12. replace() yöntemini kullanarak 30 Days of JavaScript'i 30 Days of Python olarak değiştirin.
+ 13. '30 Days of JavaScript' stringin de dizin 15'teki karakter nedir? charAt() yöntemini kullanın.
+ 14. charCodeAt() kullanan '30 Days of javaScript' stringinde  J karakter kodu nedir?
+ 15. 30 Days of JavaScript'te a öğesinin ilk oluşumunun konumunu belirlemek için indexOf kullanın
+ 16. 30 Days of JavaScript'te a öğesinin son oluşumunun konumunu belirlemek için lastIndexOf kullanın.
+ 17. Aşağıdaki cümlede "because" kelimesinin ilk geçtiği yeri bulmak için indexOf kullanın:
+    'You cannot end a sentence with because because because is a conjunction'
+ 18. Aşağıdaki cümlede "because" kelimesinin son geçtiği yeri bulmak için lastIndexOf kullanın:
+     'You cannot end a sentence with because because because is a conjunction'
+ 19. Aşağıdaki cümlede "because" kelimesinin ilk geçtiği yeri bulmak için search kullanın: 
+     'You cannot end a sentence with because because because is a conjunction'
+ 20. Bir stringin başındaki ve sonundaki boşlukları kaldırmak için trim() kullanın. 
+     Örneğin '30 Days Of JavaScript'.
+ 21. 30 Days Of JavaScript stringiyle startsWith() yöntemini kullanın ve sonucu doğru yapın
+ 22. 30 Days Of JavaScript stringiyle endsWith() yöntemini kullanın ve sonucu doğru yapın
+ 23. "30 Days of JavaScript" tüm a'lari bulmak için match() yöntemini kullanın
+ 24. concat() kullanın ve '30 Days of' ve 'JavaScript'i tek bir string olan '30 Days of JavaScript' ile birleştirin
+ 25. 30 Gün JavaScript'i 2 kez yazdırmak için repeat() yöntemini kullanın 
+#### Egzersiz: Seviye 2
+ 1. console.log() kullanarak aşağıdaki ifadeyi yazdırın:
+  ```
+The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another.
+```
+2. console.log()'u kullanarak Rahibe Teresa'nın aşağıdaki alıntısını yazdırın:
+
+  ```
+"Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead."
+```
+3. '10' tipinin tam olarak 10'a eşit olup olmadığını kontrol edin. Değilse tam olarak eşit yapın.
+4. parseFloat('9.8') 10'a tam olarak eşit değilse, 10'a eşit olup olmadığını kontrol edin.
+5. Hem python hem de jargonda 'on' ifadesinin bulunup bulunmadığını kontrol edin
+6. _I hope this course is not full of jargon_. Cümlede jargon olup olmadığını kontrol edin.
+7. 0 ile 100 arasında rastgele bir sayı üretin.
+8. 50 ile 100 arasında rastgele bir sayı üretin.
+9. Dahil olmak üzere 0 ile 255 arasında rastgele bir sayı oluşturun.
+10. Rastgele bir sayı kullanarak 'JavaScript' dize karakterlerine erişin.
+11. Aşağıdaki kalıbı yazdırmak için console.log() ve kaçış karakterlerini kullanın.
+````
+    1 1 1 1 1
+    2 1 2 4 8
+    3 1 3 9 27
+    4 1 4 16 64
+    5 1 5 25 125
+````
+12. substr kullanarak because because ifadesini aşağıdaki cümleden ayırın:
+    'You cannot end a sentence with because because because is a conjunction'
+
+#### Egzersiz: Seviye 3
+1. 'Love is the best thing in this world. Some found their love and some are still looking for their love.'' Bu cümledeki love kelimesini sayın.
+2. Aşağıdaki cümledeki tüm because kelimelerini saymak için match() kullanın:
+   'You cannot end a sentence with because because because is a conjunction'
+4. Aşağıdaki metni temizleyin ve en sık kullanılan kelimeyi bulun (ipucu,replace  ve regex kullanın).
+ ```
+const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching'
+```
+4. Aşağıdaki metinden sayıları çıkararak kişinin yıllık toplam gelirini hesaplayın.
+```
+Aylık maaşından 5000 euro, yıllık 10000 euro ikramiye, ayda 15000 euro online kurstan kazanıyor.'
+```
+🎉 TEBRİKLER ! 🎉
+
+[<< 1. Gün](../readMe.md) | [3. Gün >>](../03_Day_Booleans_operators_date/03_booleans_operators_date.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
