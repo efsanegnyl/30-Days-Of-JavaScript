@@ -4,10 +4,11 @@
 
 
 
-| # Günler |       Konular        |
-|----------|:--------------------:|
-| 01       | [Giriş](./readMe.md) |
-| 02       | [Data Types - Veri Tipleri-](./02_Day_Data_types/02_day_data_types.md) |
+| # Günler |                                               Konular                                               |
+|----------|:---------------------------------------------------------------------------------------------------:|
+| 01       |                                        [Giriş](./readMe.md)                                         |
+| 02       |               [Data Types - Veri Tipleri-](./02_Day_Data_types/02_day_data_types.md)                |
+| 03       | [Boolean, Operatörler, Date(Tarih)](./03_Day_Booleans_operators_date/03_booleans_operators_date.md) |
 
 
 
