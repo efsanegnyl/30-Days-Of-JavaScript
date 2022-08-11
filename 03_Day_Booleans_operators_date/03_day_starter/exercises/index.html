@@ -11,12 +11,29 @@
 <h1>30 Günde JavaScript</h1>
 <h2>Exercises</h2>
 <div>
-    <input id="deneme" type="text" placeholder="">
-    <input id="deneme2" type="text" placeholder="">
+    <h2>Üçgenin Alanı</h2>
+    <input type="text" id="base" placeholder="" value="">
+    <input  type="text" id="height"  placeholder="" value="">
+    <button  onclick="fieldCalc()">Alan Hesapla</button>
+    <p id="text"></p>
+
 </div>
 <div>
-    <h2>Üçgen'in Alanı :</h2> <span id="hesap"></span>
+    <h2>Üçgenin Çevresi</h2>
+    <input type="text" id="a" placeholder="" value="">
+    <input  type="text" id="b"  placeholder="" value="">
+    <input  type="text" id="c"  placeholder="" value="">
+    <button  onclick="areaCalc()">Çevre Hesapla</button>
+    <p id="area"></p>
 </div>
+<div>
+    <h2>dikdörtgenin  Alanı</h2>
+    <input type="text" id="d" placeholder="" value="">
+    <input  type="text" id="e"  placeholder="" value="">
+    <button  onclick="dikCalc()"> Hesapla</button>
+    <p id="dik"></p>
+</div>
+
 
 
 <script src="main.js"></script>

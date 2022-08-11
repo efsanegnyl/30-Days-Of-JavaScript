@@ -455,7 +455,7 @@ console.log(`${date}/${month}/${year} ${hours}:${minutes}`) // 24/7/2022 22:33
    ```sh
    Enter base: 20
    Enter height: 10
-   The area of the triangle is 100
+   Üçgenin ALanı: 100
    ```
 
 2. Kullanıcıdan üçgenin a kenarını, b kenarını ve c kenarını girmesini ve üçgenin çevresini hesaplamasını isteyen bir komut dosyası yazın (çevre = a + b + c)
@@ -464,7 +464,7 @@ console.log(`${date}/${month}/${year} ${hours}:${minutes}`) // 24/7/2022 22:33
    Enter side a: 5
    Enter side b: 4
    Enter side c: 3
-   The perimeter of the triangle is 12
+   Üçgenin Çevresi: 12
    ```
 
 3. Komut istemini kullanarak uzunluk ve genişliği alın ve bir dikdörtgenin alanını hesaplayın (alan = uzunluk x genişlik ve dikdörtgenin çevresi (çevre = 2 x (uzunluk + genişlik))

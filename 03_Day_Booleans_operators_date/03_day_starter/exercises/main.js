@@ -39,11 +39,36 @@ console.log(now.getMinutes()) //35
 console.log(now.getTime()/1000)
 
 //EXERCİSES Seviye 2
-const base=prompt(" üçgenin tabanını giriniz")
-const height=prompt(" üçgenin yüksekliğini giriniz")
- const area=base*height/2
 
-const areaElemet=document.getElementById("hesap")
-areaElemet.innerHTML=area
+//egzersiz 1
 
-console.log(document.getElementById("deneme").value) //EXERCİSES8
+let fieldCalc = () => {
+    let base=document.getElementById("base").value;
+    let height=document.getElementById("height").value;
+    let field=base*height/2;
+    document.getElementById("text").innerHTML=field;
+};
+//egzersiz 2
+let areaCalc = () => {
+    let a=document.getElementById("a").value;
+    let b=document.getElementById("b").value;
+    let c=document.getElementById("c").value;
+    let area=Number(a)+Number(b)+Number(c);
+    document.getElementById("area").innerHTML=area;
+};
+//egzersiz 3
+let dikCalc = () => {
+    let d=document.getElementById("d").value;
+    let e=document.getElementById("e").value;
+    let dikt=Number(d)*Number(e)
+    document.getElementById("dik").innerHTML=dikt;
+};
+let yaricap=6;
+const pi=3.14;
+console.log("Dairenin Alanı",pi*yaricap*yaricap)
+console.log("Dairenin Çevresi",2*pi*yaricap)
+
+
+
+
+
