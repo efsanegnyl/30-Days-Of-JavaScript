@@ -1,5 +1,9 @@
 <div align="center">
   <h1> 30 Günde  JavaScript: Veri Tipleri</h1>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> January, 2020</small>
+</sub>
 </div>
 
 [<< 1. Gün](../readMe.md) | [3. Gün >>](../03_Day_Booleans_operators_date/03_booleans_operators_date.md)

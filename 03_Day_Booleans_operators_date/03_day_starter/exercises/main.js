@@ -67,8 +67,58 @@ let yaricap=6;
 const pi=3.14;
 console.log("Dairenin Alanı",pi*yaricap*yaricap)
 console.log("Dairenin Çevresi",2*pi*yaricap)
+//egzersiz 10
 
+const name="Efsane"
+const surname="Günyol"
 
+if(name.length<=7){
+    console.log("isim kısa")
+}else{
+    console.log("isim uzun")
+}
 
+//egzersiz 11
 
+if(name.length>surname.length) {
+    console.log(`Adınız ,${name}, soyadınızdan daha uzun  ,${surname}`)
 
+}else if(name.length<surname.length){
+    console.log(`Adınız ,${name}, soyadınızdan daha kısa  ,${surname}`)
+}else{
+    console.log(`Adınız ,${name}, soyadınıza eşit,${surname}`)
+}
+
+//egzersiz 12
+const myAge=89;
+const yourAge=90
+
+if(myAge>yourAge){
+    const year=myAge-yourAge;
+    console.log(`Ben senden ${year} yaş daha yaşlıyım`)
+}else if(myAge<yourAge)
+{
+    const year=yourAge-myAge;
+    console.log(`sen benden ${year} yaş daha yaşlısın`)
+}else{
+    console.log(`aynı yaştayız`)
+}
+
+//egzersiz 13
+const birthday=()=>{
+    const date=new Date();
+    const birhtday=document.getElementById("birthday").value;
+    const year=document.getElementById("year");
+    const age=date.getFullYear()-birhtday;
+
+    if(age>=18){
+        year.innerHTML=` ${age} yaşındasın ehliyet alabilirsin`
+    }else{
+        if(birhtday>2022){
+            year.innerHTML=`${birhtday} yılında doğamazsın`
+        }else{
+            year.innerHTML=`${age} yaşındasın ehliyet alamazsın`
+        }
+
+    }
+}

@@ -1,11 +1,15 @@
 <div align="center">
   <h1> 30 Günde  JavaScript:Booleans, Operators, Date </h1>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> January, 2020</small>
+</sub>
 </div>
 
 [<< Day 2](../02_Day_Data_types/02_day_data_types.md) | [Day 4 >>](../04_Day_Conditionals/04_day_conditionals.md)
 
 
-- [📔 Gün 3](#-gün-3)
+- [📔 3.Gün](#-3-gun)
     - [Boolean Değerleri](#boolean-değerleri)
         - [True Değerleri](#true-değerleri)
         - [False Değerleri](#false-değerleri)
@@ -39,7 +43,7 @@
         - [Egzersiz: Seviye 2](#egzersiz-seviye-2)
         - [Egzersiz: Seviye 3](#egzersiz-seviye-3)
 
-# 📔 Gün 3
+# 📔 3. Gun
 ## Boolean Değerleri
 Boolean veri türü true veya false değerden birini temsil eder.Karşılaştırma operatörünü kullandğınızda  bu veri türlerinin kullanımı netleşecektir.Herhangi bir karşılaştırma sonucu true veya false  olarak bir  değer döndürür.
 
